@@ -1,4 +1,9 @@
- /* BOOK SECTION STYLES */
+ /* NEW RELEASES SECTION STYLES */
+ .newReleases {
+    background-color: var(--gray-100);
+  }
+
+   /* BOOK SECTION STYLES */
  .bookSection {
     padding: 2rem;
     margin-bottom: 2rem;

@@ -1,49 +1,39 @@
- import styles from './secaoLivros.module.css'
+import styles from './secaoLancamentos.module.css'
 
-const Livros = () => {
-    const featuredBooks = [
+const Releases = () => {
+    const newReleases = [
         {
-          id: 1,
-          title: "O Algoritmo da Imaginação",
-          author: "Ana Luz Santos",
-          price: 49.9,
+          id: 5,
+          title: "A Linguagem Secreta",
+          author: "Carla Prado",
+          price: 42.9,
           coverImage:
-            "https://via.placeholder.com/150x200/3498db/ffffff?text=Algoritmo",
-          rating: 4.5,
-          tags: ["Ficção Científica", "Tecnologia"],
+            "https://via.placeholder.com/150x200/9b59b6/ffffff?text=Linguagem",
+          rating: 4.0,
+          tags: ["Suspense", "Linguística"],
         },
         {
-          id: 2,
-          title: "Conexões Invisíveis",
-          author: "Marcos Silva",
-          price: 39.9,
+          id: 6,
+          title: "Revolução Digital",
+          author: "Pedro Almeida",
+          price: 59.9,
           coverImage:
-            "https://via.placeholder.com/150x200/e74c3c/ffffff?text=Conexões",
-          rating: 4.8,
-          tags: ["Romance", "Tecnologia"],
+            "https://via.placeholder.com/150x200/1abc9c/ffffff?text=Revolução",
+          rating: 4.6,
+          tags: ["Não-Ficção", "Tecnologia"],
         },
         {
-          id: 3,
-          title: "Além do Código",
-          author: "Julia Mendes",
-          price: 55.9,
+          id: 7,
+          title: "Fronteiras do Pensamento",
+          author: "Sofia Torres",
+          price: 37.9,
           coverImage:
-            "https://via.placeholder.com/150x200/2ecc71/ffffff?text=Código",
-          rating: 4.2,
-          tags: ["Biografia", "Programação"],
-        },
-        {
-          id: 4,
-          title: "Universos Paralelos",
-          author: "Lucas Costa",
-          price: 47.9,
-          coverImage:
-            "https://via.placeholder.com/150x200/f39c12/ffffff?text=Universos",
-          rating: 4.7,
-          tags: ["Ficção Científica", "Filosofia"],
+            "https://via.placeholder.com/150x200/d35400/ffffff?text=Fronteiras",
+          rating: 4.3,
+          tags: ["Filosofia", "Psicologia"],
         },
       ];
-    
+
       const renderStars = (rating) => {
         const stars = [];
         const fullStars = Math.floor(rating);
@@ -77,17 +67,18 @@ const Livros = () => {
         return stars;
         
     };
+
     return (
-        <section className={styles.bookSection}>
+        <section className={`${styles.bookSection} ${styles.newReleases}`}>
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionHeading}>Destaques da Semana</h2>
-          <a href="/destaques" className={styles.viewAll}>
+          <h2 className={styles.sectionHeading}>Lançamentos</h2>
+          <a href="/lancamentos" className={styles.viewAll}>
             Ver todos
           </a>
         </div>
 
         <div className={styles.booksGrid}>
-          {featuredBooks.map((book) => (
+          {newReleases.map((book) => (
             <div key={book.id} className={styles.bookCard}>
               <div className={styles.bookCover}>
                 <img
@@ -98,6 +89,7 @@ const Livros = () => {
                 <button className={styles.quickViewButton}>Visualizar</button>
               </div>
               <div className={styles.bookInfo}>
+                <span className={styles.newBadge}>Novo</span>
                 <h3 className={styles.bookTitle}>{book.title}</h3>
                 <p className={styles.bookAuthor}>por {book.author}</p>
                 <div className={styles.bookRating}>
@@ -125,7 +117,7 @@ const Livros = () => {
           ))}
         </div>
       </section>
-   )
+    )
 }
 
-export default Livros;
+export default Releases;
